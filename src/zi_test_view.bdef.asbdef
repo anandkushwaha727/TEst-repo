@@ -1,0 +1,48 @@
+managed implementation in class zbp_i_test_view unique;
+strict ( 2 );
+with draft;
+
+
+define behavior for zi_test_view
+persistent table ztest_table
+draft table ztest_table_d
+lock master
+total etag lastchangedate
+authorization master ( instance )
+etag master lastchangedate
+{
+
+  create ( authorization : global );
+  update;
+  delete;
+
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Resume;
+  draft action Discard;
+  draft determine action Prepare;
+
+
+
+  field ( readonly : update ) CompanyCode,
+  SapGl,
+  TallyGl,
+  Period,
+  FiscalYear;
+  mapping for ztest_table corresponding
+    {
+      CompanyCode       = company_code;
+      SapGl             = sap_gl;
+      TallyGl           = tally_gl;
+      Period            = period;
+      FiscalYear        = fiscal_year;
+      OpeningBalance    = opening_balance;
+      DebitBalance      = debit_balance;
+      CreditBalance     = credit_balance;
+      CumulativeBalance = cumulative_balance;
+      Currency          = currency;
+      CreatedTimestamp  = created_timestamp;
+      lastchangedate =    lastchangedate;
+    }
+
+}

@@ -1,0 +1,74 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: {
+  typeName: 'GL Balance',
+  typeNamePlural: 'GL Balances',
+  title: { type: #STANDARD, value: 'SapGl' }
+}
+
+annotate view zc_test_view_01 with
+{
+
+  @UI.facet: [
+    {
+      purpose: #STANDARD,
+      type: #IDENTIFICATION_REFERENCE,
+      label: 'GL Balance Details',
+      position: 10
+    }
+  ]
+  
+
+@UI.lineItem: [
+  {
+    position: 10,
+    label: 'Company Code',
+    importance: #HIGH
+  }
+    
+]
+CompanyCode;
+  @UI.selectionField: [{ position: 20 }]
+  @UI.lineItem:       [{ position: 20, label: 'SAP GL',            importance: #HIGH }]
+  @UI.identification: [{ position: 20, label: 'SAP GL' }]
+  SapGl;
+
+  @UI.selectionField: [{ position: 30 }]
+  @UI.lineItem:       [{ position: 30, label: 'Tally GL',          importance: #HIGH }]
+  @UI.identification: [{ position: 30, label: 'Tally GL' }]
+  TallyGl;
+
+  @UI.selectionField: [{ position: 40 }]
+  @UI.lineItem:       [{ position: 40, label: 'Period',            importance: #MEDIUM }]
+  @UI.identification: [{ position: 40, label: 'Period' }]
+  Period;
+
+  @UI.selectionField: [{ position: 50 }]
+  @UI.lineItem:       [{ position: 50, label: 'Fiscal Year',       importance: #HIGH }]
+  @UI.identification: [{ position: 50, label: 'Fiscal Year' }]
+  FiscalYear;
+
+  @UI.lineItem:       [{ position: 60, label: 'Opening Balance',   importance: #MEDIUM }]
+  @UI.identification: [{ position: 60, label: 'Opening Balance' }]
+  OpeningBalance;
+
+  @UI.lineItem:       [{ position: 70, label: 'Debit Balance',     importance: #MEDIUM }]
+  @UI.identification: [{ position: 70, label: 'Debit Balance' }]
+  DebitBalance;
+
+  @UI.lineItem:       [{ position: 80, label: 'Credit Balance',    importance: #MEDIUM }]
+  @UI.identification: [{ position: 80, label: 'Credit Balance' }]
+  CreditBalance;
+
+  @UI.lineItem:       [{ position: 90, label: 'Cumulative Balance', importance: #HIGH }]
+  @UI.identification: [{ position: 90, label: 'Cumulative Balance' }]
+  CumulativeBalance;
+
+  @UI.selectionField: [{ position: 60 }]
+  @UI.lineItem:       [{ position: 100, label: 'Currency',         importance: #MEDIUM }]
+  @UI.identification: [{ position: 100, label: 'Currency' }]
+  Currency;
+
+  @UI.identification: [{ position: 110, label: 'Created At' }]
+  CreatedTimestamp;
+
+}
